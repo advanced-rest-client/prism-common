@@ -1,0 +1,13 @@
+language: node_js
+node_js: 8
+sudo: required
+before_script:
+- npm install -g polymer-cli
+- polymer install
+script:
+- npm run lint
+cache:
+  directories:
+  - node_modules
+after_success:
+- node tasks/ci.js
